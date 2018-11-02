@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InputBoxLayout">
+
+        <!--输入框数量-->
+        <attr name="box_number" format="integer" />
+        <!--输入文字大小-->
+        <attr name="text_size" format="dimension|reference" />
+        <!--输入文字颜色-->
+        <attr name="text_color" format="color" />
+        <!--输入框默认背景-->
+        <attr name="box_bg_normal" format="reference" />
+        <!--输入框激活时背景-->
+        <attr name="box_bg_focus" format="reference" />
+        <!--&lt;!&ndash;内边距&ndash;&gt;-->
+        <!--<attr name="padding" format="dimension" />-->
+        <!--输入框大小-->
+        <attr name="box_size" format="dimension" />
+        <!--每个输入框垂直边距-->
+        <attr name="v_padding" format="dimension" />
+        <!--每个输入框水平边距-->
+        <attr name="h_padding" format="dimension" />
+
+        <!--输入类型-->
+        <attr name="input_type" format="enum">
+            <enum name="number" value="0x0001" />
+            <enum name="text" value="0x0002" />
+            <enum name="number_password" value="0x0003" />
+            <enum name="text_password" value="0x0004" />
+        </attr>
+    </declare-styleable>
+</resources>
