@@ -5,7 +5,7 @@
         <!--输入框数量-->
         <attr name="box_number" format="integer" />
         <!--输入文字大小-->
-        <attr name="text_size" format="dimension|reference" />
+        <attr name="text_size" format="dimension" />
         <!--输入文字颜色-->
         <attr name="text_color" format="color" />
         <!--输入框默认背景-->

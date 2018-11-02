@@ -26,7 +26,7 @@ public class InputBoxLayout extends LinearLayout implements View.OnKeyListener, 
     private static final int INPUT_TYPE_TEXT_PASSWORD = 0x0004;
     private int inputType;
     private int boxNumber;
-    private int textSize;
+    private float textSize;
     private int textColor;
     private int boxBgNormal;
     private int boxBgFocus;
@@ -61,11 +61,11 @@ public class InputBoxLayout extends LinearLayout implements View.OnKeyListener, 
         invalidate();
     }
 
-    public int getTextSize() {
+    public float getTextSize() {
         return textSize;
     }
 
-    public void setTextSize(int textSize) {
+    public void setTextSize(float textSize) {
         this.textSize = textSize;
         invalidate();
     }
@@ -228,7 +228,7 @@ public class InputBoxLayout extends LinearLayout implements View.OnKeyListener, 
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.InputBoxLayout);
             inputType = a.getInt(R.styleable.InputBoxLayout_input_type, INPUT_TYPE_NUMBER);
             boxNumber = a.getInt(R.styleable.InputBoxLayout_box_number, 4);
-            textSize = a.getInt(R.styleable.InputBoxLayout_text_size, 16);
+            textSize = a.getDimension(R.styleable.InputBoxLayout_text_size, 16);
             textColor = a.getColor(R.styleable.InputBoxLayout_text_color, Color.BLACK);
             boxBgNormal = a.getResourceId(R.styleable.InputBoxLayout_box_bg_normal, R.drawable.box_bg_normal);
             boxBgFocus = a.getResourceId(R.styleable.InputBoxLayout_box_bg_focus, R.drawable.box_bg_fcous);

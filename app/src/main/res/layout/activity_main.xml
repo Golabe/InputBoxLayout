@@ -12,6 +12,11 @@
        android:id="@+id/ibl_input"
        app:box_size="20dp"
        app:box_number="4"
+       app:box_bg_normal="@drawable/bg_box_bg_fcous"
+       app:h_padding="2dp"
+       app:text_color="@color/colorPrimary"
+       app:v_padding="2dp"
+       app:text_size="12sp"
        app:input_type="text_password"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
