@@ -12,8 +12,6 @@
         <attr name="box_bg_normal" format="reference" />
         <!--输入框激活时背景-->
         <attr name="box_bg_focus" format="reference" />
-        <!--&lt;!&ndash;内边距&ndash;&gt;-->
-        <!--<attr name="padding" format="dimension" />-->
         <!--输入框大小-->
         <attr name="box_size" format="dimension" />
         <!--每个输入框垂直边距-->
