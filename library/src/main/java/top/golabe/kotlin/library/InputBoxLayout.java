@@ -330,8 +330,9 @@ public class InputBoxLayout extends LinearLayout implements View.OnKeyListener, 
             editText = (EditText) getChildAt(i);
             if (editText.getText().length() < 0) {
                 editText.requestFocus();
+                return;
             }
-            return;
+
         }
 
     }
