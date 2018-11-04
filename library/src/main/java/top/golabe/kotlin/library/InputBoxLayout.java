@@ -164,7 +164,6 @@ public class InputBoxLayout extends LinearLayout implements View.OnKeyListener, 
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
-
             child.setVisibility(View.VISIBLE);
             int cWidth = child.getMeasuredWidth();
             int cHeight = child.getMeasuredHeight();
@@ -184,7 +183,7 @@ public class InputBoxLayout extends LinearLayout implements View.OnKeyListener, 
     private void init() {
         for (int i = 0; i < boxNumber; i++) {
             EditText editText = new EditText(getContext());
-            LayoutParams params = new LayoutParams((int) boxSize, (int) boxSize);
+            LayoutParams params = new LayoutParams( boxSize, boxSize);
             params.bottomMargin = vPadding;
             params.topMargin = vPadding;
             params.leftMargin = hPadding;

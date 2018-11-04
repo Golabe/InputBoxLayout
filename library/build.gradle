@@ -1,13 +1,7 @@
 apply plugin: 'com.android.library'
-//配置插件
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.1"       //这个是版本号，必须填写
 android {
     compileSdkVersion 28
-    resourcePrefix "allenyue_input_box_layout"     //这里随便填
-
 
     defaultConfig {
         minSdkVersion 15
@@ -25,7 +19,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -37,73 +30,3 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-
-def siteUrl = 'https://github.com/Golabe/InputBoxLayout'      // 项目的主页   这个是说明，可随便填
-def gitUrl = 'https://github.com/Golabe/InputBoxLayout'      // Git仓库的url  这个是说明，可随便填
-group = "top.golabe.kotlin.library"    // 这里是groupId ,必须填写  一般填你唯一的包名
-
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                // Add your description here
-                name '验证码密码输入框'     //项目描述
-                url siteUrl
-                // Set your license
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id 'allenyue'        //填写开发者的一些基本信息
-                        name 'yuequan'    //填写开发者的一些基本信息
-                        email '2643552374@qq.com'   //填写开发者的一些基本信息
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
-}
-
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-bintray {
-    user = properties.getProperty("bintray.user")    //读取 local.properties 文件里面的 bintray.user
-    key = properties.getProperty("bintray.apikey")   //读取 local.properties 文件里面的 bintray.apikey
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        name = "InputBoxLayout"    //发布到JCenter上的项目名字，必须填写
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true
-    }
-}
