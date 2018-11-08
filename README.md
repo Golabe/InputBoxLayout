@@ -4,6 +4,13 @@
 
 <img src="https://github.com/Golabe/InputBoxLayout/blob/master/images/a1.png?raw=true" width=220 height=400 /><img src="https://github.com/Golabe/InputBoxLayout/blob/master/images/a2.png?raw=true" width=220 height=400 />
 <img src="https://github.com/Golabe/InputBoxLayout/blob/master/images/a3.png?raw=true" width=220 height=400 /><img src="https://github.com/Golabe/InputBoxLayout/blob/master/images/a4.png?raw=true" width=220 height=400 />
+
+### GRADLE 
+
+```xml
+ implementation 'top.golabe.InputBoxLayout:library:1.1.0'
+```
+
 ### XML 
 ```xml
   <top.golabe.kotlin.library.InputBoxLayout
